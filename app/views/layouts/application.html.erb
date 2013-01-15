@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dimarsec</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "style", :media => "all" %>
+  <%= stylesheet_link_tag    "reset", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  
+	<meta http-equiv="description" content="" />
+	<meta http-equiv="keywords" content="" />
+</head>
+<body>
+<div class="wraper-full clearfix">
+    <div id="header" class="clearfix">
+        <div class="logo"><a href="#" title="Dimarsec">Dimarsec</a></div>
+        <div id="nav">
+            <ul class="unstyled clearfix">                                           
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="over-ons.html">Over Ons</a> </li>
+              <li><a href="werkwijze.html">Werkwijze</a></li>
+              <li><a href="solliciteren.html">Solliciteren</a></li>
+              <li class="last"><a href="klant-worden.html">Klant Worden?</a></li>
+            </ul>		
+        </div>
+    </div><!-- #header --> 
+    <div id="middle">		
+    	<%= yield %>        
+    </div><!-- #middle -->
+    <div id="footer">
+    	<div class="row-wrap contact-row clearfix">
+        	<div class="col1">
+            	<h3>Neem contact met ons op</h3>
+                <div class="ct-body">
+                    <p><strong>Telefoon</strong> <span>+316-52311073</span></p>
+                    <p><strong>Email</strong> <span>info@dimarsec.com</span></p>
+                    <p><strong>Adres</strong> <span>Kerstant van den Bergelaan 19A <br/> 2054EM Rotterdam  <br/> Nederland</span></p>
+                </div>
+            </div>
+            <div class="col2">
+            	<h3>Volg ons</h3>
+                <div class="ct-body social">
+                	<a href="#" title="Facebook" target="_blank">Facebook</a>
+                    <a href="#" class="tw" title="Twitter" target="_blank">Twitter</a>
+                    <a href="#" class="li" title="LinkedIn" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="col3">
+            	<h3>Blijf op de hoogte</h3>
+                <div class="ct-body newsletter">
+                	<form action="" method="post" id="form-newsletter">
+                    	<input type="text" placeholder="Voer email adres in" name="email" />
+                        <input type="submit" class="org-btn" value="Inschrijven voor nieuwsbrief"  />
+                    </form>	
+                </div>
+            </div>
+        </div>
+        <div class="footer-under clearfix">
+            <div class="left-footer">  
+                Dutch industrial & Maritime Security Compane
+            </div>
+            <div class="right-footer">  
+                <em><strong>Copyright ©2012 Dimarsec</strong> All rights reserved</em>
+            </div>	
+       </div>
+    </div><!-- #footer -->
+</div>
+
+
+
+</body>
+</html>

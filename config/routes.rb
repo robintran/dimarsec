@@ -1,7 +1,7 @@
 Dimarsec::Application.routes.draw do
   get "home/index"
   get "home/klant_worden"
-
+  match "/klant_worden" => "home#klant_worden"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

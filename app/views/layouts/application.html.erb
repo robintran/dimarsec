@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Dimarsec</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "style", :media => "all" %>
-  <%= stylesheet_link_tag    "reset", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dimarsec</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag    "style", :media => "all" %>
+    <%= stylesheet_link_tag    "reset", :media => "all" %>
+    <%= javascript_include_tag "application" %>
   
 	<meta http-equiv="description" content="" />
 	<meta http-equiv="keywords" content="" />
@@ -17,11 +17,15 @@
         <div class="logo"><a href="#" title="Dimarsec">Dimarsec</a></div>
         <div id="nav">
             <ul class="unstyled clearfix">                                           
-              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active">
+                <%= link_to("Home", root_path) %>
+              </li>
               <li><a href="over-ons.html">Over Ons</a> </li>
               <li><a href="werkwijze.html">Werkwijze</a></li>
               <li><a href="solliciteren.html">Solliciteren</a></li>
-              <li class="last"><a href="klant-worden.html">Klant Worden?</a></li>
+              <li class="last">
+                <%= link_to("Klant Worden?", klant_worden_index_path) %>
+              </li>
             </ul>		
         </div>
     </div><!-- #header --> 
@@ -66,8 +70,5 @@
        </div>
     </div><!-- #footer -->
 </div>
-
-
-
 </body>
 </html>

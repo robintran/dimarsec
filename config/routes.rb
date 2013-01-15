@@ -1,7 +1,6 @@
 Dimarsec::Application.routes.draw do
-  get "klant_worden/index"
-
   get "home/index"
+  get "home/klant_worden"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

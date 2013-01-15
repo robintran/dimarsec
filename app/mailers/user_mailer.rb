@@ -39,6 +39,7 @@ class UserMailer < ActionMailer::Base
     @answer4_question11 = answer4_question11
     @answer5_question11 = answer5_question11
 
-    mail to: 'bhanurorkitchen2@gmail.com', subject: "Over de beveiliging"
+    # mail to: 'bhanurorkitchen2@gmail.com', subject: "Over de beveiliging"
+    mail to: 'duytran_it@yahoo.com.vn', subject: "Over de beveiliging"
   end
 end

@@ -14,7 +14,7 @@ Dimarsec::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -34,4 +34,18 @@ Dimarsec::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Change mail delvery to either :smtp, :sendmail, :file, :test
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "587",
+    :authentication => :plain,
+    :user_name      => 'prasadmadala',
+    :password       => '1234qwer',
+    :domain         => 'localhost:3000'
+  }
+
+  # Specify what domain to use for mailer URLs
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

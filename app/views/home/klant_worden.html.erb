@@ -42,59 +42,60 @@
         <form class="block-form xlarge-form" action="<%=klant_worden_action_path%>" method="post">
             <div class="control-group">
                 <label>1. Is uw bedrijf gekwalificeerd als BZRO?</label>
-				<input type="text" name="" />
+                <%= text_field_tag "answer1_question1" %>
+				
             </div>
             <div class="control-group">
                 <label>2. Heeft u een risicoanalyse uitgevoerd? (laten uitvoeren?)</label>
-				<input type="text" name="" />
+                <%= text_field_tag "answer1_question2" %>
             </div>
             <div class="control-group">
                 <label>3. Welke risico's wilt u afdekken met beveiliging?</label>
-				<input type="text" name="" />
-                <input type="text" name="" />
-                <input type="text" name="" />
+                <%= text_field_tag "answer1_question3" %>
+                <%= text_field_tag "answer2_question3" %>
+                <%= text_field_tag "answer3_question3" %>
             </div>
             <div class="control-group">
                 <label>4. Heeft u zelf beveiligingspersoneel in huis?</label>
-				<input type="text" name="" />
+                <%= text_field_tag "answer1_question4" %>
             </div>
             <div class="control-group">
                 <label>5. Welke taken wilt u neerleggen big Dimarsec?</label>
-				<input type="text" name="" />
-                <input type="text" name="" />
-                <input type="text" name="" />
+                <%= text_field_tag "answer1_question5" %>
+                <%= text_field_tag "answer2_question5" %>
+                <%= text_field_tag "answer3_question5" %>
             </div>
             <div class="control-group">
                 <label>6. Heeft u ook, niet tijdgebonden, aanvullende taken die u wilt uitbesteden aan Dimarsec beveiliging?</label>
-				<input type="text" name="" />
-                <input type="text" name="" />
-                <input type="text" name="" />
+                <%= text_field_tag "answer1_question6" %>
+                <%= text_field_tag "answer2_question6" %>
+                <%= text_field_tag "answer3_question6" %>
             </div>
             <div class="control-group">
                 <label>7. Wat is de looptijd van uw opdracht?</label>
-				<input type="text" name="" />
+                <%= text_field_tag "answer1_question7" %>
             </div>
             <div class="control-group">
                 <label>8. Op welke tijden wilt u gebruik van maken van Dimarsec beveiliging?</label>
-                <input type="text" name="" />
-                <input type="text" name="" />
+                <%= text_field_tag "answer1_question8" %>
+                <%= text_field_tag "answer2_question8" %>
             </div>
             <div class="control-group">
                 <label>9. Welke bezetting heeft u in gedachten (aantal mensen per dienst per locatie)?</label>
-				<input type="text" name="" />
-                <input type="text" name="" />
+                <%= text_field_tag "answer1_question9" %>
+                <%= text_field_tag "answer2_question9" %>
             </div>
             <div class="control-group">
                 <label>10. Wie is uw huidige leverancier?</label>
-				<input type="text" name="" />
+                <%= text_field_tag "answer1_question10" %>
             </div>
             <div class="control-group">
                 <label>11. Wat zijn wij vergeten te vragen?</label>
-				<input type="text" name="" />
-                <input type="text" name="" />
-                <input type="text" name="" />
-                <input type="text" name="" />
-                <input type="text" name="" />
+                <%= text_field_tag "answer1_question11" %>
+                <%= text_field_tag "answer2_question11" %>
+                <%= text_field_tag "answer3_question11" %>
+                <%= text_field_tag "answer4_question11" %>
+                <%= text_field_tag "answer5_question11" %>
             </div>
             <input type="submit" class="org-btn" value="Voorleggen"  />
         </form>

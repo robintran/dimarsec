@@ -104,9 +104,9 @@ h6 {font-size: 11px;}
 	.sector-row .span4 {width:330px; float:left; margin-left:70px; text-align:center}
 	.sector-row .span4:first-child {margin-left:0;}
 	.sector-row .span4 img {margin-bottom:10px;}
-	.sector-row .span4 h2 a {font:bold 23px Verdana, Geneva, sans-serif; color:#f99200}
+	.sector-row .span4 h2 a, h2.big-title {font:bold 23px Verdana, Geneva, sans-serif; color:#f99200}
 	.sector-row .long-text-intro {text-align:center; font-size:22px; line-height:30px; padding-top:29px; clear:both}
-
+	h2.big-title {margin-bottom:13px;}
 .col-row {border-bottom:none; padding-bottom:5px}
 .col-row div {float:left; }
 	.col-row div h2 {line-height:normal}
@@ -132,8 +132,26 @@ h6 {font-size: 11px;}
 		#form-newsletter {}
 			#form-newsletter input[type="text"] { margin-bottom:10px; width:286px; font-style:italic;}
 			#form-newsletter input[type="submit"] {padding:0; width:307px; text-align:center}
-.org-btn, a.org-btn {background:url(bg-org-btn.png) top left repeat-x; height:37px; line-height:37px; font:bold 17px Verdana, Geneva, sans-serif; color:#fff; text-shadow:0 -1px 1px #d58706; border-radius:5px; -webkit-border-radius:5px; border:#c27400 1px solid; padding:0 15px; box-shadow:0 1px 2px 0 #999; cursor:pointer}
+.org-btn, a.org-btn {background:url(bg-org-btn.png) top left repeat-x; height:37px;  font:bold 17px/34px Verdana, Geneva, sans-serif; color:#fff; text-shadow:0 -1px 1px #d58706; border-radius:5px; -webkit-border-radius:5px; border:#c27400 1px solid; padding:0 15px; box-shadow:0 1px 2px 0 #999; cursor:pointer}
+input.org-btn {padding-bottom:3px;}
+a.w330 {display:block; width:330px; text-align:center; font-size:18px;}
 
+h1.title-score {font:bold 40px Verdana, Geneva, sans-serif; color:#f89200; text-align:center; margin-bottom:40px;}
+.nobor {border:none; padding-bottom:10px;}
+.wrapper-span {}
+	.wrapper-span .span4 {width:330px; float:left; margin:0 0 0 70px; }
+	.wrapper-span .span4:first-child {margin-left:0;}
+	.wrapper-span .span4 .span-box {width:298px; background:url(bg-gra-box.png) bottom left repeat-x; border:#a0a0a0 1px solid; border-radius:7px; -webkit-border-radius:7px; padding:15px; min-height:220px; box-shadow:0 0 2px 0 #888; text-align:center; margin-bottom:20px;}
+		.wrapper-span .span4 .org-btn {width:330px; font-size:16px; height:37px; line-height:34px; display:block; padding:0; text-align:center}
+		.span-box h2 {font:bold 18px Verdana, Geneva, sans-serif; color:#7e7f83; border-bottom:#ddd 1px solid; padding:3px 0 20px; margin-bottom:20px;}
+		.span-box .span-body {text-shadow:0 1px 0 #fff; line-height:22px; font-size:15px; }
+.span7 {float:left; width:660px; padding-right:20px; border-right:#e5e6e6 1px solid}
+	.poll-col .control-group {margin-bottom:70px; }
+	.poll-col .control-group.last {margin-bottom:20px;}
+	.poll-col .control-group h3 {font:bold 19px Verdana, Geneva, sans-serif; color:#f89200; margin-bottom:12px;}
+	.poll-col label {font-weight:normal}
+.span5 {float:left; width:300px; margin-left:80px;}
+	.span-right {float:left; width:430px; padding-left:20px;}
 
 
 .form-page {padding:50px 100px 10px}
@@ -154,11 +172,15 @@ h1.title-page, h3.head-title-page {margin-top:0;}
 .content {font-size:15px; line-height:21px; margin-bottom:20px;}
 	.content p {margin-bottom:17px;}
 	.content img.fright {margin-left:35px;}
-
+	.content ul {list-style:disc inside}
+	.content ol {list-style:decimal inside}
+	.space-list li {margin-bottom:18px;}
+.space {height:40px;}
 #slidewrapper {clear:both; height:400px;}
 
 
 /*FORM*/
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -194,7 +216,8 @@ input[type="text"], input[type="password"] {font:normal 15px/37px Verdana, Genev
   margin-left: 195px;
   *margin-left: 0;
 }
-
+.persoon-box  .form-horizontal .control-label {width:250px;}
+.persoon-box .form-horizontal .controls {margin-left:265px;}
 .form-horizontal .controls:first-child {
   *padding-left: 180px;
 }
@@ -214,6 +237,16 @@ input[type="text"], input[type="password"] {font:normal 15px/37px Verdana, Genev
 
 .form-horizontal .form-actions {
   padding-left: 180px;
+}
+.radio, .checkbox {
+    min-height: 20px;
+    padding-left: 20px;
+}
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+    float: left;
+    margin:5px 0 0 -20px;
+	cursor:pointer;
+	line-height:normal; width:auto;
 }
 
 .large-form input[type="text"] {width:570px;}

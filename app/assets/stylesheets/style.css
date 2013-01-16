@@ -54,14 +54,14 @@ h6 {font-size: 11px;}
 	#sitebar {float:right; width:240px;  display:inline;}
 .banner {padding:20px 0 0; }
 
-#middle {position:relative; z-index:80; background:url(bg-middle.jpg) top left repeat-x #fff; padding:0 0 30px;}
+#middle {position:relative; z-index:80; background:url(../images/bg-middle.jpg) top left repeat-x #fff; padding:0 0 30px;}
 #middle.single-page {background:#F4F4F4}
 
 /*****************************/
 /*	        NAVIGATION       */
 /*****************************/
-#nav {float:right; background:url(bg-menu.png) bottom right no-repeat; padding-right:12px; margin-top:4px;}
-#nav ul {background:url(bg-menu.png) top left no-repeat; height:53px; padding-top:1px;}
+#nav {float:right; background:url(../images/bg-menu.png) bottom right no-repeat; padding-right:12px; margin-top:4px;}
+#nav ul {background:url(../images/bg-menu.png) top left no-repeat; height:53px; padding-top:1px;}
 #nav li {
 	position:relative;
 	float:left;
@@ -88,7 +88,7 @@ h6 {font-size: 11px;}
 /*****************************/
 
 .logo {float:left;}
-.logo a {background:url(logo.gif) top left no-repeat;  display:block; text-indent:-9999px; width:267px; height:60px;}
+.logo a {background:url(../images/logo.gif) top left no-repeat;  display:block; text-indent:-9999px; width:267px; height:60px;}
 
 
 
@@ -98,7 +98,7 @@ h6 {font-size: 11px;}
 		.wellcome-text p {line-height:22px; margin-bottom:24px;}
 	.call-col {width:300px; text-align:center; float:left; padding-top:19px;}
 		.call-col p {font-size:23px; font-weight:bold; color:#7e7f83; margin-bottom:40px;}
-		.call-col .big-call-action {display:block; width:302px; height:85px; padding-top:17px; text-align:center; background:url(big-btn.png) top left no-repeat; font-size:23px; font-weight:bold; color:#fff; text-shadow:0px -1px 1px #c47f01 }
+		.call-col .big-call-action {display:block; width:302px; height:85px; padding-top:17px; text-align:center; background:url(../images/big-btn.png) top left no-repeat; font-size:23px; font-weight:bold; color:#fff; text-shadow:0px -1px 1px #c47f01 }
 
 .sector-row {}
 	.sector-row .span4 {width:330px; float:left; margin-left:70px; text-align:center}
@@ -125,14 +125,14 @@ h6 {font-size: 11px;}
 		.contact-row .col1 p strong {float:left; width:96px; text-align:right}
 		.contact-row .col1 p span {float:left; overflow:hidden; padding-left:11px;}
 	.contact-row .col2 {width:345px; float:left; padding:0 19px; border-right:#e5e6e6 1px solid; border-left:#e5e6e6 1px solid; min-height:205px; padding-bottom:10px;}
-		.contact-row .col2 .social a {background:url(social.png) top left no-repeat; float:left; width:102px; height:101px; text-indent:-9999px;}
+		.contact-row .col2 .social a {background:url(../images/social.png) top left no-repeat; float:left; width:102px; height:101px; text-indent:-9999px;}
 			.contact-row .col2 .social a.tw {background-position:-119px 0; margin:0 18px;}
 			.contact-row .col2 .social a.li {background-position:top right}
 	.contact-row .col3 {width:330px; float:left; padding-left:19px;}
 		#form-newsletter {}
 			#form-newsletter input[type="text"] { margin-bottom:10px; width:286px; font-style:italic;}
 			#form-newsletter input[type="submit"] {padding:0; width:307px; text-align:center}
-.org-btn, a.org-btn {background:url(bg-org-btn.png) top left repeat-x; height:37px;  font:bold 17px/34px Verdana, Geneva, sans-serif; color:#fff; text-shadow:0 -1px 1px #d58706; border-radius:5px; -webkit-border-radius:5px; border:#c27400 1px solid; padding:0 15px; box-shadow:0 1px 2px 0 #999; cursor:pointer}
+.org-btn, a.org-btn {background:url(../images/bg-org-btn.png) top left repeat-x; height:37px;  font:bold 17px/34px Verdana, Geneva, sans-serif; color:#fff; text-shadow:0 -1px 1px #d58706; border-radius:5px; -webkit-border-radius:5px; border:#c27400 1px solid; padding:0 15px; box-shadow:0 1px 2px 0 #999; cursor:pointer}
 input.org-btn {padding-bottom:3px;}
 a.w330 {display:block; width:330px; text-align:center; font-size:18px;}
 
@@ -141,7 +141,7 @@ h1.title-score {font:bold 40px Verdana, Geneva, sans-serif; color:#f89200; text-
 .wrapper-span {}
 	.wrapper-span .span4 {width:330px; float:left; margin:0 0 0 70px; }
 	.wrapper-span .span4:first-child {margin-left:0;}
-	.wrapper-span .span4 .span-box {width:298px; background:url(bg-gra-box.png) bottom left repeat-x; border:#a0a0a0 1px solid; border-radius:7px; -webkit-border-radius:7px; padding:15px; min-height:220px; box-shadow:0 0 2px 0 #888; text-align:center; margin-bottom:20px;}
+	.wrapper-span .span4 .span-box {width:298px; background:url(../images/bg-gra-box.png) bottom left repeat-x; border:#a0a0a0 1px solid; border-radius:7px; -webkit-border-radius:7px; padding:15px; min-height:220px; box-shadow:0 0 2px 0 #888; text-align:center; margin-bottom:20px;}
 		.wrapper-span .span4 .org-btn {width:330px; font-size:16px; height:37px; line-height:34px; display:block; padding:0; text-align:center}
 		.span-box h2 {font:bold 18px Verdana, Geneva, sans-serif; color:#7e7f83; border-bottom:#ddd 1px solid; padding:3px 0 20px; margin-bottom:20px;}
 		.span-box .span-body {text-shadow:0 1px 0 #fff; line-height:22px; font-size:15px; }
@@ -167,7 +167,7 @@ h1.title-page, h3.head-title-page {margin-top:0;}
 	.no-un li:hover {color:#5d8061;}
 
 .list-arr {list-style:none}
-.list-arr li {background:url(arr.jpg) left center no-repeat; padding-left:8px;}
+.list-arr li {background:url(../images/arr.jpg) left center no-repeat; padding-left:8px;}
 
 .content {font-size:15px; line-height:21px; margin-bottom:20px;}
 	.content p {margin-bottom:17px;}
@@ -186,7 +186,7 @@ label {
     margin-bottom: 5px;
 	font-weight:bold
 }
-input[type="text"], input[type="password"] {font:normal 15px/37px Verdana, Geneva, sans-serif; color:#999999;  border:#bbbbbb 1px solid; background:url(bg-txt.png) top left repeat-x; padding:0 10px; height:37px;}
+input[type="text"], input[type="password"] {font:normal 15px/37px Verdana, Geneva, sans-serif; color:#999999;  border:#bbbbbb 1px solid; background:url(../images/bg-txt.png) top left repeat-x; padding:0 10px; height:37px;}
 .form-horizontal .control-group {
   margin-bottom: 30px;
   *zoom: 1;

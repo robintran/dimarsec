@@ -4,8 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Dimarsec</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-  
+    <%= javascript_include_tag "application" %>  
 	<meta http-equiv="description" content="" />
 	<meta http-equiv="keywords" content="" />
 </head>
@@ -15,19 +14,19 @@
         <div class="logo"><a href="#" title="Dimarsec">Dimarsec</a></div>
         <div id="nav">
             <ul class="unstyled clearfix">                                           
-              <li class="active">
+              <li class="<%='active' if params[:action]=='index'%>">
                 <%= link_to("Home", root_path) %>
               </li>
-              <li>
+              <li class="<%='active' if params[:action]=='over_ons'%>">
                 <%= link_to("Over Ons", over_ons_path) %>
               </li>
-              <li>
+              <li class="<%='active' if params[:action]=='werkwijze'%>">
                 <%= link_to("Werkwijze", werkwijze_path) %>
               </li>
-              <li>
+              <li class="<%='active' if params[:action]=='solliciteren'%>">
                 <%= link_to("Solliciteren", solliciteren_path) %>
               </li>
-              <li class="last">
+              <li class="last<%=' active' if params[:action]=='klant_worden'%>">
                 <%= link_to("Klant Worden?", klant_worden_path) %>
               </li>
             </ul>		

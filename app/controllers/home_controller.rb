@@ -43,7 +43,6 @@ class HomeController < ApplicationController
     redirect_to solliciteren_results_path
   end
 
-
   def klant_worden_action
   	UserMailer.signup_confirmation(params[:answer1_question1],
   		params[:answer1_question2],
@@ -57,5 +56,5 @@ class HomeController < ApplicationController
   		params[:answer1_question11],
   		params[:answer1_question11], params[:answer2_question11], params[:answer3_question11], params[:answer4_question11], params[:answer5_question11]).deliver
   	redirect_to home_klant_worden_path
-  end
+  end 
 end

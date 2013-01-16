@@ -14,7 +14,7 @@ Dimarsec::Application.routes.draw do
   match "/check_test_action" => "home#check_test_action"
   get "home/solliciteren_results"
   match "/solliciteren_results" => "home#solliciteren_results"
-
+  match "/send_subscribe_email_action" => "home#send_subscribe_email_action"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

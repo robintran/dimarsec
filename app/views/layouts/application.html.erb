@@ -36,41 +36,7 @@
     	<%= yield %>        
     </div><!-- #middle -->
     <div id="footer">
-    	<div class="row-wrap contact-row clearfix">
-        	<div class="col1">
-            	<h3>Contact Us!</h3>
-                <div class="ct-body">
-                    <p><strong>Telephone: </strong> <span>4839-3434-43453</span></p>
-                    <p><strong>Fax: </strong> <span>23434034-34434</span></p>
-                    <p><strong>Email: </strong> <span>info@dimarsec.nl
-                </div>
-            </div>
-            <div class="col2">
-            	<h3>Share Us!</h3>
-                <div class="ct-body social">
-                	<a href="#" title="Facebook" target="_blank">Facebook</a>
-                    <a href="#" class="tw" title="Twitter" target="_blank">Twitter</a>
-                    <a href="#" class="li" title="LinkedIn" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-            <div class="col3">
-            	<h3>Subscribe!</h3>
-                <div class="ct-body newsletter">
-                	<form action="" method="post" id="form-newsletter">
-                    	<input type="text" placeholder="Enter Email" name="email" />
-                        <input type="submit" class="org-btn" value="Send"  />
-                    </form>	
-                </div>
-            </div>
-        </div>
-        <div class="footer-under clearfix">
-            <div class="left-footer">  
-                Dutch industrial & Maritime Security Compane
-            </div>
-            <div class="right-footer">  
-                <em><strong>Copyright ©2012 Dimarsec</strong> All rights reserved</em>
-            </div>	
-       </div>
+    	<%= render :partial => "home/footer" %>
     </div><!-- #footer -->
 </div>
 </body>

@@ -1,6 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "prasadmadala@gmail.com"
 
+  def notice(from)
+    mail from: from
+    mail to: 'duytran_it@yahoo.com.vn', subject: "Subscription of new letter adding"
+  end
 
   def signup_confirmation(answer1_question1,
     answer1_question2,
@@ -39,6 +42,7 @@ class UserMailer < ActionMailer::Base
     @answer4_question11 = answer4_question11
     @answer5_question11 = answer5_question11
 
-    mail to: 'bhanurorkitchen2@gmail.com', subject: "Over de beveiliging"
+    mail from: "prasadmadala@gmail.com"
+    mail to: 'duytran_it@yahoo.com.vn', subject: "Over de beveiliging"
   end
 end

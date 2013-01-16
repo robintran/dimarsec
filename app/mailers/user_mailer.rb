@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "duytran.it@gmail.com"
+  default from: "prasadmadala@gmail.com"
 
 
   def signup_confirmation(answer1_question1,
@@ -39,7 +39,6 @@ class UserMailer < ActionMailer::Base
     @answer4_question11 = answer4_question11
     @answer5_question11 = answer5_question11
 
-    # mail to: 'bhanurorkitchen2@gmail.com', subject: "Over de beveiliging"
-    mail to: 'duytran_it@yahoo.com.vn', subject: "Over de beveiliging"
+    mail to: 'bhanurorkitchen2@gmail.com', subject: "Over de beveiliging"
   end
 end

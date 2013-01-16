@@ -15,11 +15,12 @@ class HomeController < ApplicationController
     session[:true_answer] += 1 unless params[:answer7] !="a"
     session[:true_answer] += 1 unless params[:answer8] !="a"
     session[:true_answer] += 1 unless params[:answer9] !="a"
-    session[:true_answer] += 1 unless params[:answer10] !="a"
+    session[:true_answer] += 1 unless params[:answer10] !="a"    
     session[:true_answer] += 1 unless params[:answer11] !="a"
-
-
-
+    session[:true_answer] += 1 unless params[:answer12] !="a"
+    session[:true_answer] += 1 unless params[:answer13] !="a"
+    session[:true_answer] += 1 unless params[:answer14] !="a"
+    
     redirect_to solliciteren_results_path
   end
 

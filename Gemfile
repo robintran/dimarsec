@@ -21,14 +21,14 @@ gem 'jquery-rails'
 
 group :development, :test do
 	gem 'pg'
-	gem 'twitter'
 end
 
 group :production do
 	gem 'pg'
-	gem 'twitter'
+	
 end
 
+gem 'twitter'
 gem 'koala'
 
 # To use ActiveModel has_secure_password

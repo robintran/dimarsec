@@ -3,42 +3,22 @@ class HomeController < ApplicationController
   end
 
   def check_test_action
-    session[:false_answer] = nil
-    session[:false_answer] = 0
+    session[:true_answer] = nil
+    session[:true_answer] = 0
 
-    if params[:answer1] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer2] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer3] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer4] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer5] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer6] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer7] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer8] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer9] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer10] != "a"
-      session[:false_answer] += 1
-    end
-    if params[:answer11] != "a"
-      session[:false_answer] += 1
-    end
+    session[:true_answer] += 1 unless params[:answer1] !="a"
+    session[:true_answer] += 1 unless params[:answer2] !="a"
+    session[:true_answer] += 1 unless params[:answer3] !="a"
+    session[:true_answer] += 1 unless params[:answer4] !="a"
+    session[:true_answer] += 1 unless params[:answer5] !="a"
+    session[:true_answer] += 1 unless params[:answer6] !="a"
+    session[:true_answer] += 1 unless params[:answer7] !="a"
+    session[:true_answer] += 1 unless params[:answer8] !="a"
+    session[:true_answer] += 1 unless params[:answer9] !="a"
+    session[:true_answer] += 1 unless params[:answer10] !="a"
+    session[:true_answer] += 1 unless params[:answer11] !="a"
+
+
 
     redirect_to solliciteren_results_path
   end

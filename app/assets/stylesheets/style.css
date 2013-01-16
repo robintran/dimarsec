@@ -130,7 +130,7 @@ h6 {font-size: 11px;}
 			.contact-row .col2 .social a.li {background-position:top right}
 	.contact-row .col3 {width:330px; float:left; padding-left:19px;}
 		#form-newsletter {}
-			#form-newsletter input[type="text"], input[type="email"] { margin-bottom:10px; width:286px; font-style:italic;}
+			#form-newsletter input[type="text"],#form-newsletter input[type="email"] { margin-bottom:10px; width:286px; font-style:italic;}
 			#form-newsletter input[type="submit"] {padding:0; width:307px; text-align:center}
 .org-btn, a.org-btn {background:url(bg-org-btn.png) top left repeat-x; height:37px;  font:bold 17px/34px Verdana, Geneva, sans-serif; color:#fff; text-shadow:0 -1px 1px #d58706; border-radius:5px; -webkit-border-radius:5px; border:#c27400 1px solid; padding:0 15px; box-shadow:0 1px 2px 0 #999; cursor:pointer}
 input.org-btn {padding-bottom:3px;}

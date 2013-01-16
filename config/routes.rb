@@ -4,6 +4,16 @@ Dimarsec::Application.routes.draw do
   post "home/klant_worden"
   match "/klant_worden" => "home#klant_worden"
   match "/klant_worden_action" => "home#klant_worden_action"
+  get "home/over_ons"
+  match "/over_ons" => "home#over_ons"
+  get "home/werkwijze"
+  match "/werkwijze" => "home#werkwijze"
+  get "home/solliciteren"
+  post "home/solliciteren"
+  match "/solliciteren" => "home#solliciteren"
+  match "/check_test_action" => "home#check_test_action"
+  get "home/solliciteren_results"
+  match "/solliciteren_results" => "home#solliciteren_results"
 
 
   # The priority is based upon order of creation:

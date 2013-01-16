@@ -1,5 +1,33 @@
 class HomeController < ApplicationController
+
+
   def index
+  end
+
+  def post_facebook_action
+
+  end
+
+  def post_twitter_action
+    require "rubygems"
+    require "twitter"
+ 
+    # Certain methods require authentication. To get your Twitter OAuth credentials,
+    # register an app at http://dev.twitter.com/apps
+    Twitter.configure do |config|
+      config.consumer_key = 'iar1DDdoOpAEegkMKVrDsw'
+      config.consumer_secret =  '1E6SX4HBllWkaqI20nT4RNuc0GaNxZktUQIzzBFY8fg'
+      config.oauth_token = '927345289-P5GbSzCXPNC1wq6OZnkFHHMd2SkoqHiIfu7srO02'
+      config.oauth_token_secret = 'QGjgBd88pKjhnzkDqgkf4NolqS0DIxREjVwgiN4aNQE'
+    end
+ 
+    # Initialize your Twitter client
+    client = Twitter::Client.new
+ 
+    # Post a status update
+    client.update("I just posted a status update via the Twitter Ruby Gem !")
+    # redirect_to request.referer, :notice => 'Tweet successfully posted'
+    redirect_to root_path
   end
 
   def check_test_action

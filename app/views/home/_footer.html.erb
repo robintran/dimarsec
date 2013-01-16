@@ -9,9 +9,9 @@
     </div>
     <div class="col2">
         <h3>Volg ons</h3>
-        <div class="ct-body social">
-            <a href="#" title="Facebook" target="_blank">Facebook</a>
-            <a href="#" class="tw" title="Twitter" target="_blank">Twitter</a>
+        <div class="ct-body social">            
+            <%= link_to "Facebook", post_facebook_action_path %>
+            <%= link_to("Twitter", post_twitter_action_path, :class => "tw") %>
             <a href="#" class="li" title="LinkedIn" target="_blank">LinkedIn</a>
         </div>
     </div>

@@ -19,6 +19,8 @@ Dimarsec::Application.routes.draw do
   match "post_facebook_action" => "home#post_facebook_action"
   get "home/post_twitter_action"
   match "post_twitter_action" => "home#post_twitter_action"
+  get "home/post_linkedin_action"
+  match "post_linkedin_action" => "home#post_linkedin_action"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

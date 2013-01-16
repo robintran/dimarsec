@@ -20,14 +20,14 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-	gem 'pg'
+	gem 'sqlite3'
 end
 
 group :production do
-	gem 'pg'
-	
+	gem 'pg'	
 end
 
+gem 'linkedin'
 gem 'twitter'
 gem 'koala'
 

@@ -4,8 +4,29 @@ class HomeController < ApplicationController
   def index
   end
 
-  def post_facebook_action
+  def post_linkedin_action
+    require 'rubygems'
+    require 'linkedin'
 
+    # LinkedIn.configure do |config|
+    #   config.token = "4pau5xpp6ls2"
+    #   config.secret = "2PNyI4Q9vYBfsUOy"
+    # end
+
+    client = LinkedIn::Client.new("4pau5xpp6ls2", "2PNyI4Q9vYBfsUOy")
+    client.authorize_from_access("010c91d7-2777-4f03-ac05-76d8012ae8ed", "08b71260-ebb8-45c5-9f35-3d525d8a2efa")
+
+    now = DateTime.now.to_s
+    client.add_share({:comment => now})
+    redirect_to root_path    
+  end
+
+  def post_facebook_action
+    # oauth = Koala::Facebook::OAuth.new("145330472289249", "14005f60212c790ef1163beed1a5c298", "http://smackaho.st:3000")
+    now = DateTime.now.to_s
+    graph = Koala::Facebook::API.new("AAACEdEose0cBABq943yA4TZCf2pHz0BjlYh3u2k8VXO0uxcbZAiavO3wZBdgM5fpK1lqo3SpxUUfOaIUw3CZAfKUiIrVC4lCyq2FdjOBm8KpjMgLcuoN")
+    graph.put_object("me", "feed", :message => now)
+    redirect_to root_path
   end
 
   def post_twitter_action
@@ -25,7 +46,8 @@ class HomeController < ApplicationController
     client = Twitter::Client.new
  
     # Post a status update
-    client.update("I just posted a status update via the Twitter Ruby Gem !")
+    now = DateTime.now.to_s
+    client.update(now)
     # redirect_to request.referer, :notice => 'Tweet successfully posted'
     redirect_to root_path
   end

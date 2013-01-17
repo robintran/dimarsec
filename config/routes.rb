@@ -21,6 +21,8 @@ Dimarsec::Application.routes.draw do
   match "post_twitter_action" => "home#post_twitter_action"
   get "home/post_linkedin_action"
   match "post_linkedin_action" => "home#post_linkedin_action"
+  get "/home/sollicitatie_formulier"
+  match "sollicitatie_formulier" => "home#sollicitatie_formulier"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

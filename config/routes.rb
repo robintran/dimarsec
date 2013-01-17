@@ -8,10 +8,13 @@ Dimarsec::Application.routes.draw do
   match "/over_ons" => "home#over_ons"
   get "home/werkwijze"
   match "/werkwijze" => "home#werkwijze"
+
   get "home/solliciteren"
   post "home/solliciteren"
   match "/solliciteren" => "home#solliciteren"
-  match "/solliciteren_action" => "home#solliciteren_action"
+  match "/solliciteren_action" => "home#solliciteren_action"  
+  match "/sollicitatie_formulier_action" => "home#sollicitatie_formulier_action"
+
   match "/send_subscribe_email_action" => "home#send_subscribe_email_action"
   get "home/post_facebook_action"
   match "post_facebook_action" => "home#post_facebook_action"
@@ -19,8 +22,8 @@ Dimarsec::Application.routes.draw do
   match "post_twitter_action" => "home#post_twitter_action"
   get "home/post_linkedin_action"
   match "post_linkedin_action" => "home#post_linkedin_action"
-  get "/home/sollicitatie_formulier"
-  match "sollicitatie_formulier" => "home#sollicitatie_formulier"
+  
+  # match "sollicitatie_formulier" => "home#sollicitatie_formulier"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

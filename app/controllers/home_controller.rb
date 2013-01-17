@@ -51,30 +51,33 @@ class HomeController < ApplicationController
   end
 
   def solliciteren_action   
-    session[:false_answer] = nil
+    session[:false_answer] = "questions"
     if request.post?
       true_answer = 0
       true_answer += 1 unless params[:answer1] !="a"
-      true_answer += 1 unless params[:answer2] !="c"
-      true_answer += 1 unless params[:answer3] !="b"
+      true_answer += 1 unless params[:answer2] !="a"
+      true_answer += 1 unless params[:answer3] !="a"
       true_answer += 1 unless params[:answer4] !="a"
       true_answer += 1 unless params[:answer5] !="a"
-      true_answer += 1 unless params[:answer6] !="c"
-      true_answer += 1 unless params[:answer7] !="c"
+      true_answer += 1 unless params[:answer6] !="a"
+      true_answer += 1 unless params[:answer7] !="a"
       true_answer += 1 unless params[:answer8] !="a"
-      true_answer += 1 unless params[:answer9] !="b"
-      true_answer += 1 unless params[:answer10] !="c"    
-      true_answer += 1 unless params[:answer11] !="b"
+      true_answer += 1 unless params[:answer9] !="a"
+      true_answer += 1 unless params[:answer10] !="a"    
+      true_answer += 1 unless params[:answer11] !="a"
       true_answer += 1 unless params[:answer12] !="a"
-      true_answer += 1 unless params[:answer13] !="c"
-      true_answer += 1 unless params[:answer14] !="b"
+      true_answer += 1 unless params[:answer13] !="a"
+      true_answer += 1 unless params[:answer14] !="a"
 
-      session[:false_answer] = 14 - true_answer
-    else
-      session[:false_answer] = nil
+      session[:false_answer] = (14 - true_answer).to_s
     end
     redirect_to solliciteren_path
 
+  end
+
+  def sollicitatie_formulier_action
+    session[:false_answer] = "formulier"
+    redirect_to solliciteren_path
   end
 
   def klant_worden_action
@@ -91,13 +94,6 @@ class HomeController < ApplicationController
   		params[:answer1_question11], params[:answer2_question11], params[:answer3_question11], params[:answer4_question11], params[:answer5_question11]).deliver
   	redirect_to home_klant_worden_path
   end
-
-  def sollicitatie_formulier
-    if (!session[:false_answer])||(session[:false_answer] > 3)
-      redirect_to solliciteren_path
-    end
-  end
-
 
   def send_subscribe_email_action
     UserMailer.notice(params[:email]).deliver

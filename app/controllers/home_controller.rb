@@ -34,7 +34,6 @@ class HomeController < ApplicationController
     require "twitter"
  
     # Certain methods require authentication. To get your Twitter OAuth credentials,
-    # register an app at http://dev.twitter.com/apps
     Twitter.configure do |config|
       config.consumer_key = 'iar1DDdoOpAEegkMKVrDsw'
       config.consumer_secret =  '1E6SX4HBllWkaqI20nT4RNuc0GaNxZktUQIzzBFY8fg'
@@ -48,37 +47,31 @@ class HomeController < ApplicationController
     # Post a status update
     now = DateTime.now.to_s
     client.update(now)
-    # redirect_to request.referer, :notice => 'Tweet successfully posted'
     redirect_to root_path
   end
 
   def solliciteren_action   
-    
-    # redirect_to solliciteren_results_path
-    session[:pass] = false
-    session[:true_answer] = 0
+    session[:false_answer] = nil
     if request.post?
       true_answer = 0
       true_answer += 1 unless params[:answer1] !="a"
-      true_answer += 1 unless params[:answer2] !="c"
-      true_answer += 1 unless params[:answer3] !="b"
+      true_answer += 1 unless params[:answer2] !="a"
+      true_answer += 1 unless params[:answer3] !="a"
       true_answer += 1 unless params[:answer4] !="a"
       true_answer += 1 unless params[:answer5] !="a"
-      true_answer += 1 unless params[:answer6] !="c"
-      true_answer += 1 unless params[:answer7] !="c"
+      true_answer += 1 unless params[:answer6] !="a"
+      true_answer += 1 unless params[:answer7] !="a"
       true_answer += 1 unless params[:answer8] !="a"
-      true_answer += 1 unless params[:answer9] !="b"
-      true_answer += 1 unless params[:answer10] !="c"    
-      true_answer += 1 unless params[:answer11] !="b"
+      true_answer += 1 unless params[:answer9] !="a"
+      true_answer += 1 unless params[:answer10] !="a"    
+      true_answer += 1 unless params[:answer11] !="a"
       true_answer += 1 unless params[:answer12] !="a"
-      true_answer += 1 unless params[:answer13] !="c"
-      true_answer += 1 unless params[:answer14] !="b"
+      true_answer += 1 unless params[:answer13] !="a"
+      true_answer += 1 unless params[:answer14] !="a"
 
-      session[:true_answer] = true_answer
-      session[:pass] = true
+      session[:false_answer] = 14 - true_answer
     else
-      session[:pass] = nil
-      session[:true_answer] = nil
+      session[:false_answer] = nil
     end
     redirect_to solliciteren_path
 
@@ -98,6 +91,13 @@ class HomeController < ApplicationController
   		params[:answer1_question11], params[:answer2_question11], params[:answer3_question11], params[:answer4_question11], params[:answer5_question11]).deliver
   	redirect_to home_klant_worden_path
   end
+
+  def sollicitatie_formulier
+    if (!session[:false_answer])||(session[:false_answer] > 3)
+      redirect_to solliciteren_path
+    end
+  end
+
 
   def send_subscribe_email_action
     UserMailer.notice(params[:email]).deliver

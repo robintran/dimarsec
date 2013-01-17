@@ -57,19 +57,19 @@ class HomeController < ApplicationController
     session[:true_answer] = 0
 
     session[:true_answer] += 1 unless params[:answer1] !="a"
-    session[:true_answer] += 1 unless params[:answer2] !="a"
-    session[:true_answer] += 1 unless params[:answer3] !="a"
+    session[:true_answer] += 1 unless params[:answer2] !="c"
+    session[:true_answer] += 1 unless params[:answer3] !="b"
     session[:true_answer] += 1 unless params[:answer4] !="a"
     session[:true_answer] += 1 unless params[:answer5] !="a"
-    session[:true_answer] += 1 unless params[:answer6] !="a"
-    session[:true_answer] += 1 unless params[:answer7] !="a"
+    session[:true_answer] += 1 unless params[:answer6] !="c"
+    session[:true_answer] += 1 unless params[:answer7] !="c"
     session[:true_answer] += 1 unless params[:answer8] !="a"
-    session[:true_answer] += 1 unless params[:answer9] !="a"
-    session[:true_answer] += 1 unless params[:answer10] !="a"    
-    session[:true_answer] += 1 unless params[:answer11] !="a"
+    session[:true_answer] += 1 unless params[:answer9] !="b"
+    session[:true_answer] += 1 unless params[:answer10] !="c"    
+    session[:true_answer] += 1 unless params[:answer11] !="b"
     session[:true_answer] += 1 unless params[:answer12] !="a"
-    session[:true_answer] += 1 unless params[:answer13] !="a"
-    session[:true_answer] += 1 unless params[:answer14] !="a"
+    session[:true_answer] += 1 unless params[:answer13] !="c"
+    session[:true_answer] += 1 unless params[:answer14] !="b"
     
     redirect_to solliciteren_results_path
   end

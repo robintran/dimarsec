@@ -1,5 +1,5 @@
 <div class="row-wrap nobor clearfix">
-    <h1 class="title-score">Your Score: <%= 14 - session[:true_answer].to_i %> fout</h1>
+    <h1 class="title-score">Your Score: <%= 14 - session[:true_answer] %> fout</h1>
     <div class="wrapper-span">
     	<div class="span4">
         	<div class="span-box">
@@ -8,7 +8,7 @@
                     Proficiat, u heeft de vragen goed genoeg beantwoord en wordt nu doorgeschakeld naar onze contactpagina zodat u uw gegevens kunt achterlaten. Wij nemen dan snel contact met u op.   
                 </div>
             </div>
-            <% if (14 - session[:true_answer].to_i) > 3 %>
+            <% if (14 - session[:true_answer]) > 3 %>
                 <a href="<%= sollicitatie_formulier_path %>" class="org-btn" onclick="return false">Knop: doe de test opnieuw</a>
             <% else %>
                 <a href="<%= sollicitatie_formulier_path %>" class="org-btn">Knop: doe de test opnieuw</a>
@@ -23,7 +23,7 @@
                     Probeer de test opnieuw.
                 </div>
             </div>
-            <a href="<%= solliciteren_path %>" class="org-btn">Knop: doe de test opnieuw</a>
+            <a href="<%= solliciteren_action_path %>" class="org-btn">Knop: doe de test opnieuw</a>
         </div>
         <div class="span4">
         	<div class="span-box">

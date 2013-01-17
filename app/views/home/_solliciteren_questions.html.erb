@@ -1,0 +1,236 @@
+<div class="row-wrap clearfix">
+	<h3 class="head-title-page">Bent u geinteresseerd in een baan in de beveiliging bij Dimarsec en wilt u solliciteren?</h3>
+    <div>Doe de test hieronder en laat zien dat u verstand heeft van industriële, maritieme en large construction beveiliging: </div>
+</div>
+<div class="row-wrap nobor clearfix">   
+    
+    <div class="clearfix">
+    	<div class="span7 poll-col">	
+        	<form method="post" action="<%= solliciteren_action_path %>">
+                <div class="control-group">
+                    <h3>Vraag 1: waar staat de afkorting ISPS voor?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer1, "a") %>
+                        <%= label_tag(:answer1_child, "a: Internationale Scheeps- en Haven beveiliging") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer1, "b") %>
+                        <%= label_tag(:answer1_child, "b: Internal Shipping and Port Schedules") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer1, "c") %>
+                        <%= label_tag(:answer1_child, "c: International Shore Protection Systems") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 2: Wanneer bent u verplicht de arbeidsinspectie te waarschuwen?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer2, "a") %>
+                        <%= label_tag(:answer2_child, "a: Bij iedere ingrijpende verstoring van de productieprocessen") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer2, "b") %>
+                        <%= label_tag(:answer2_child, "b: Bij alle ongevallen met lichamelijk letsel of milieugevolgen") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer2, "c") %>
+                        <%= label_tag(:answer2_child, "c: Bij incidenten met zwaar lichamelijk letsel of doden. ") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 3: Wanneer spreekt men van krachtstroom?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer3, "a") %>
+                        <%= label_tag(:answer3_child, "a: Als de gebruikte stroom gebruikt wordt voor de voortbeweging van zware voorwerpen (treinen, loopbanden, persen etc)") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer3, "b") %>
+                        <%= label_tag(:answer3_child, "b: Als de spanning boven de 350 volt ligt") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer3, "c") %>
+                        <%= label_tag(:answer3_child, "c: Als de spanning meer dan 8000 volt bedraagt.") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 4: Tot welke windkracht mag men doorgaans de normale hijswerkzaamheden verrichten?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer4, "a") %>
+                        <%= label_tag(:answer4_child, "a: 6 Beaufort of lager") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer4, "b") %>
+                        <%= label_tag(:answer4_child, "b: 4 Beaufort of lager") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer4, "c") %>
+                        <%= label_tag(:answer4_child, "c: Er gelden geen beperkingen ") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 5: Waar staat de naam DCMR voor?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer5, "a") %>
+                        <%= label_tag(:answer5_child, "a: Milieu Dienst Rijnmond") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer5, "b") %>
+                        <%= label_tag(:answer5_child, "b: Dienst Centrale Monetaire Registratie") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer5, "c") %>
+                        <%= label_tag(:answer5_child, "c: Doorvoer Contract Maritieme Routes") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 6: Waar staat de afkorting BRZO voor?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer6, "a") %>
+                        <%= label_tag(:answer6_child, "a: Bedrijfs Risico’s Zeehavens en Omstreken") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer6, "b") %>
+                        <%= label_tag(:answer6_child, "b: Benedendijkse Rivieren Zuid Oost") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer6, "c") %>
+                        <%= label_tag(:answer6_child, "c: Bedrijf Risico Zware Ongevallen") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 7: Wat regelt de Wet Arbeid Vreemdelingen?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer7, "a") %>
+                        <%= label_tag(:answer7_child, "a: Hoe je het werk moet inrichten voor mensen die zich vreemd gedragen") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer7, "b") %>
+                        <%= label_tag(:answer7_child, "b: Aan welke voorwaarden mensen moeten voldoen om in Nederland te mogen werken") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer7, "c") %>
+                        <%= label_tag(:answer7_child, "c: Aan welke voorwaarden niet EU leden moeten voldoen om in Europa te mogen werken   ") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 8: Wanneer is er sprake van een Trauma?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer8, "a") %>
+                        <%= label_tag(:answer8_child, "a: Als er sprake is van een angstige gebeurtenis die diepe indruk maakt op een persoon") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer8, "b") %>
+                        <%= label_tag(:answer8_child, "b: Als er sprake is van slapeloosheid en nachtmerries gepaard met zweetaanvallen") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer8, "c") %>
+                        <%= label_tag(:answer8_child, "c: Als er sprake is van ernstig drankmisbruik of drugsgebruik") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 9: Hoe bepaalt men of er sprake is van drugsgebruik?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer9, "a") %>
+                        <%= label_tag(:answer9_child, "a: Vreemde reacties op gestelde vragen en rode ogen") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer9, "b") %>
+                        <%= label_tag(:answer9_child, "b: Door een drugstest uit te voeren (bloed; urine of speeksel)") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer9, "c") %>
+                        <%= label_tag(:answer9_child, "c: Afwezig gedrag, lang haar en een onverzorgd uiterlijk") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 10: Wat zijn de kernwaarden van Dimarsec?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer10, "a") %>
+                        <%= label_tag(:answer10_child, "a: Snel, Goed, Gespecialiseerd") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer10, "b") %>
+                        <%= label_tag(:answer10_child, "b: Ambitieus, Bezorgd, Content") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer10, "c") %>
+                        <%= label_tag(:answer10_child, "c: Betrouwbaar, Competent, Ambitieus") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 11: Wat verstaat men onder de remweg van een voertuig?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer11, "a") %>
+                        <%= label_tag(:answer11_child, "a: De weg waarop geremd wordt door het voertuig") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer11, "b") %>
+                        <%= label_tag(:answer11_child, "b: De afstand die een voertuig nodig heeft om tot stilstand te komen ") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer11, "c") %>
+                        <%= label_tag(:answer11_child, "c: De tijdduur die een voertuig nodig heeft om tot stilstand te komen") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 12: Noem drie doorgaans geaccepteerde legitimatiebewijzen voor Nederlanders in Nederland?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer12, "a") %>
+                        <%= label_tag(:answer12_child, "a: Paspoort, identiteitskaart, rijbewijs") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer12, "b") %>
+                        <%= label_tag(:answer12_child, "b: Identiteitskaart, travelcard, rijbewijs") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer12, "c") %>
+                        <%= label_tag(:answer12_child, "c: Paspoort, OV kaart, rijbewijs") %>
+                    </label>
+                </div>
+                <div class="control-group">
+                    <h3>Vraag 13: Wat is “just in time delivery?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer13, "a") %>
+                        <%= label_tag(:answer13_child, "a: Een levering die volgens afspraak geleverd wordt") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer13, "b") %>
+                        <%= label_tag(:answer13_child, "b: Een levering die net op tijd is") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer13, "c") %>
+                        <%= label_tag(:answer13_child, "c: Een levering die een minimale opslagtijd nodig heeft ") %>
+                    </label>
+                </div>
+                <div class="control-group last">
+                    <h3>Vraag 14: Wat is het voordeel van specialisatie?</h3>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer14, "a") %>
+                        <%= label_tag(:answer14_child, "a: Meestal zijn er geen voordelen, je kan beter een beetje van alles weten") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer14, "b") %>
+                        <%= label_tag(:answer14_child, "b: Door specialisatie weet je precies waar je mee bezig bent en ben je nodig voor die specifieke taak.") %>
+                    </label>
+                    <label class="radio">
+                        <%= radio_button_tag(:answer14, "c") %>
+                        <%= label_tag(:answer14_child, "c: Door specialisatie beperk je jezelf tot een bepaald onderwerp of vakgebied") %>
+                    </label>
+                </div>
+                
+                <div class="form-actions">
+                    <input type="submit" value="Submit" class="org-btn fright" />
+                </div>
+                
+            </form>
+        </div>
+        <div class="span5">
+        	<div class="call-col">
+                <p>Wil je weten wat <br/> Dimardec voor jou kan<br/> betekenen als <br/> werkgever?</p>
+                <p>Ben je beveiliger en <br/> twijfel he over je <br/> kwalificaties?</p>
+                <a href="<%= klant_worden_path %>" class="big-call-action">Neem vandaag nog <br/> contact  met ons op!</a>
+            </div>
+        </div>
+    </div>
+    
+</div>     

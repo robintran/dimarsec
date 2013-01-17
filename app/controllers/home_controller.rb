@@ -52,26 +52,36 @@ class HomeController < ApplicationController
     redirect_to root_path
   end
 
-  def check_test_action
-    session[:true_answer] = nil
-    session[:true_answer] = 0
-
-    session[:true_answer] += 1 unless params[:answer1] !="a"
-    session[:true_answer] += 1 unless params[:answer2] !="c"
-    session[:true_answer] += 1 unless params[:answer3] !="b"
-    session[:true_answer] += 1 unless params[:answer4] !="a"
-    session[:true_answer] += 1 unless params[:answer5] !="a"
-    session[:true_answer] += 1 unless params[:answer6] !="c"
-    session[:true_answer] += 1 unless params[:answer7] !="c"
-    session[:true_answer] += 1 unless params[:answer8] !="a"
-    session[:true_answer] += 1 unless params[:answer9] !="b"
-    session[:true_answer] += 1 unless params[:answer10] !="c"    
-    session[:true_answer] += 1 unless params[:answer11] !="b"
-    session[:true_answer] += 1 unless params[:answer12] !="a"
-    session[:true_answer] += 1 unless params[:answer13] !="c"
-    session[:true_answer] += 1 unless params[:answer14] !="b"
+  def solliciteren_action   
     
-    redirect_to solliciteren_results_path
+    # redirect_to solliciteren_results_path
+    session[:pass] = false
+    session[:true_answer] = 0
+    if request.post?
+      true_answer = 0
+      true_answer += 1 unless params[:answer1] !="a"
+      true_answer += 1 unless params[:answer2] !="c"
+      true_answer += 1 unless params[:answer3] !="b"
+      true_answer += 1 unless params[:answer4] !="a"
+      true_answer += 1 unless params[:answer5] !="a"
+      true_answer += 1 unless params[:answer6] !="c"
+      true_answer += 1 unless params[:answer7] !="c"
+      true_answer += 1 unless params[:answer8] !="a"
+      true_answer += 1 unless params[:answer9] !="b"
+      true_answer += 1 unless params[:answer10] !="c"    
+      true_answer += 1 unless params[:answer11] !="b"
+      true_answer += 1 unless params[:answer12] !="a"
+      true_answer += 1 unless params[:answer13] !="c"
+      true_answer += 1 unless params[:answer14] !="b"
+
+      session[:true_answer] = true_answer
+      session[:pass] = true
+    else
+      session[:pass] = nil
+      session[:true_answer] = nil
+    end
+    redirect_to solliciteren_path
+
   end
 
   def klant_worden_action

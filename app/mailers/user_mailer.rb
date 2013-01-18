@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
 
   def notice(from)
     mail from: from
-    mail to: 'bhanurorkitchen2@gmail.com', subject: "New newsletter adding"
+    mail to: 'bhanurorkitchen2@gmail.com', subject: "New Newsletter Adding"
   end
 
   def signup_confirmation(answer1_question1,
@@ -43,6 +43,6 @@ class UserMailer < ActionMailer::Base
     @answer5_question11 = answer5_question11
 
     mail from: "prasadmadala@gmail.com"
-    mail to: 'bhanurorkitchen2@gmail.com', subject: "About the security"
+    mail to: 'bhanurorkitchen2@gmail.com', subject: "Security Survey"
   end
 end

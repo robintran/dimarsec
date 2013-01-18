@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
     default from: 'web@dimarsec.nl'
 
   def notice(from)
-    # mail from: from
+    @from = from
     mail to: 'bhanurorkitchen2@gmail.com', subject: "New Newsletter Adding"
   end
 

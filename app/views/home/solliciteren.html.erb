@@ -1,9 +1,10 @@
-<% if session[:false_answer] == "questions" %>
+<% if (!session[:false_answer])||(session[:false_answer] == "questions") %>
   <%= render :partial => "home/solliciteren_questions" %>
-<% else%>
-	<% if session[:false_answer] == "formulier" %>
-  	<%= render :partial => "home/sollicitatie_formulier" %>
-  <% else %>
-  	<%= render :partial => "home/solliciteren_results" %>
-  <% end %>	
-<% end %>
+<% elsif session[:false_answer] == "formulier" %>
+ 	<%= render :partial => "home/sollicitatie_formulier" %>
+<% else %>
+ 	<%= render :partial => "home/solliciteren_results" %>
+<% end %>	
+
+
+<% session[:false_answer] = nil %>

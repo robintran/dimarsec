@@ -1,52 +1,42 @@
 class HomeController < ApplicationController
 
   def index
+    if session[:request_token]
+      url = request.fullpath
+      oauth_verifier = url.split('oauth_verifier=')[1]
+      signing_consumer = OAuth::Consumer.new("4iUq2TNrl3scEYsYH800mw", "3y4rwvIxdi6K9x6wHh8MEo8jH2Sy0UEZlwLY9qJgk",{ :site=>"http://twitter.com" })
+      access_token = OAuth::RequestToken.new(signing_consumer, session[:request_token], session[:request_token_secret]). get_access_token(:oauth_verifier => oauth_verifier)
+      oauth_token = access_token.params[:oauth_token]
+      oauth_token_secret = access_token.params[:oauth_token_secret]
+      Twitter.configure do |config|
+        config.consumer_key = "4iUq2TNrl3scEYsYH800mw"
+        config.consumer_secret = "3y4rwvIxdi6K9x6wHh8MEo8jH2Sy0UEZlwLY9qJgk"
+        config.oauth_token = oauth_token
+        config.oauth_token_secret = oauth_token_secret
+      end
+
+      client = Twitter::Client.new
+      now = DateTime.now
+      client.update(now)
+    end
   end
 
-  def post_linkedin_action
-    require 'rubygems'
-    require 'linkedin'
-
-    # LinkedIn.configure do |config|
-    #   config.token = "4pau5xpp6ls2"
-    #   config.secret = "2PNyI4Q9vYBfsUOy"
-    # end
-
-    client = LinkedIn::Client.new("4pau5xpp6ls2", "2PNyI4Q9vYBfsUOy")
-    client.authorize_from_access("010c91d7-2777-4f03-ac05-76d8012ae8ed", "08b71260-ebb8-45c5-9f35-3d525d8a2efa")
-
-    now = DateTime.now.to_s
-    client.add_share({:comment => now})
-    redirect_to root_path    
-  end
-
-  def post_facebook_action
-    # oauth = Koala::Facebook::OAuth.new("145330472289249", "14005f60212c790ef1163beed1a5c298", "http://smackaho.st:3000")
-    now = DateTime.now.to_s
-    graph = Koala::Facebook::API.new("AAACEdEose0cBABq943yA4TZCf2pHz0BjlYh3u2k8VXO0uxcbZAiavO3wZBdgM5fpK1lqo3SpxUUfOaIUw3CZAfKUiIrVC4lCyq2FdjOBm8KpjMgLcuoN")
-    graph.put_object("me", "feed", :message => now)
-    redirect_to root_path
+  def self.consumer
+    OAuth::Consumer.new("4iUq2TNrl3scEYsYH800mw", "3y4rwvIxdi6K9x6wHh8MEo8jH2Sy0UEZlwLY9qJgk",{ :site=>"http://twitter.com" })
   end
 
   def post_twitter_action
-    require "rubygems"
-    require "twitter"
- 
-    # Certain methods require authentication. To get your Twitter OAuth credentials,
-    Twitter.configure do |config|
-      config.consumer_key = 'iar1DDdoOpAEegkMKVrDsw'
-      config.consumer_secret =  '1E6SX4HBllWkaqI20nT4RNuc0GaNxZktUQIzzBFY8fg'
-      config.oauth_token = '927345289-P5GbSzCXPNC1wq6OZnkFHHMd2SkoqHiIfu7srO02'
-      config.oauth_token_secret = 'QGjgBd88pKjhnzkDqgkf4NolqS0DIxREjVwgiN4aNQE'
-    end
- 
-    # Initialize your Twitter client
-    client = Twitter::Client.new
- 
-    # Post a status update
-    now = DateTime.now.to_s
-    client.update(now)
-    redirect_to root_path
+    @request_token = HomeController.consumer.get_request_token(:oauth_callback => "http://smackaho.st:3000")
+    session[:request_token] = @request_token.token
+    session[:request_token_secret] = @request_token.secret
+
+    puts "****************"
+    puts @request_token.authorize_url
+    puts "****************"
+
+    redirect_to @request_token.authorize_url
+
+    return
   end
 
   def solliciteren_action   

@@ -91,7 +91,7 @@ class HomeController < ApplicationController
   		params[:answer1_question9], params[:answer2_question9],
   		params[:answer1_question11],
   		params[:answer1_question11], params[:answer2_question11], params[:answer3_question11], params[:answer4_question11], params[:answer5_question11]).deliver
-  	redirect_to home_klant_worden_path
+  	redirect_to klant_worden_path
   end
 
   def send_subscribe_email_action

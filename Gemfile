@@ -31,7 +31,8 @@ end
 gem 'twitter'
 # gem 'omniauth'
 gem 'oauth'
-# gem 'koala'
+gem 'koala'
+gem 'fb_graph'
 # gem 'oauth'
 
 # To use ActiveModel has_secure_password

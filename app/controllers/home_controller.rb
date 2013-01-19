@@ -10,15 +10,54 @@ class HomeController < ApplicationController
 
       # redirect_to root_path
     end
+    if session[:facebook]
+      client.authorization_code = params[:code]
+      fb_access_token = client.access_token! :client_auth_body
+
+      @graph = Koala::Facebook::API.new(fb_access_token)
+      now = DateTime.now
+      @graph.put_connections("me", "feed", :message => now)
+
+      # redirect_to root_path
+    end
   end
 
+  def post_facebook_action
+    session[:facebook] = true 
+    fb_auth = FbGraph::Auth.new(fb_id, fb_secret)
+    client = fb_auth.client
+    client.redirect_uri = "http://dimarsec-dev.herokuapp.com/facebook/callback"
+    redirect_to client.authorization_uri
+    # oauth = Koala::Facebook::OAuth.new(fb_id, fb_secret)
+    # fb_access_token = oauth.parse_signed_request(params[:signed_request])["oauth_token"] 
+    # @graph = Koala::Facebook::API.new(fb_access_token)
+    # now = DateTime.now
+    # @graph.put_connections("me", "feed", :message => now)
+
+    # redirect_to root_path
+    
+  end
+
+  #*****************************************
+  # Begin supporting for post twitter action
+  def fb_id
+    return "325004784270336"    
+  end
+  def fb_secret
+    return "fa4fe593d97335f2d0bc27e796761d79"
+  end
+  # End supporting for post switter action
+  #*****************************************
+
+
+  # post to twitter
   def post_twitter_action
     if session[:access_token]
       post_to_twitter(session[:access_token])
 
       redirect_to root_path
     else
-      @request_token = get_consumer.get_request_token(:oauth_callback => "http://dimarsec-dev.herokuapp.com/")
+      @request_token = get_consumer.get_request_token(:oauth_callback => "http://smackaho.st:3000/")
       session[:request_token] = @request_token
       redirect_to @request_token.authorize_url
     end

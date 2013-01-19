@@ -26,11 +26,7 @@ class HomeController < ApplicationController
   end
 
   def post_twitter_action
-<<<<<<< HEAD
     @request_token = HomeController.consumer.get_request_token(:oauth_callback => "http://dimarsec-dev.herokuapp.com")
-=======
-    @request_token = HomeController.consumer.get_request_token(:oauth_callback => "http://dimarsec-dev.herokuapp.com/")
->>>>>>> heroku/master
     session[:request_token] = @request_token.token
     session[:request_token_secret] = @request_token.secret
 

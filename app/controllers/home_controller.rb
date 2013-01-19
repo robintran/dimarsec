@@ -14,11 +14,17 @@ class HomeController < ApplicationController
       # client.authorization_code = params[:code]
       fb_auth = FbGraph::Auth.new(fb_id, fb_secret)
       client = fb_auth.client
+      client.authorization_code = params[:code]
       fb_access_token = client.access_token! :client_auth_body
 
-      @graph = Koala::Facebook::API.new(fb_access_token)
-      now = DateTime.now
-      @graph.put_connections("me", "feed", :message => now)
+      me = FbGraph::User.me(ACCESS_TOKEN)
+      me.feed!(
+        :message => 'Updating via FbGraph',
+        :picture => 'https://graph.facebook.com/matake/picture',
+        :link => 'https://github.com/nov/fb_graph',
+        :name => 'FbGraph',
+        :description => 'A Ruby wrapper for Facebook Graph API'
+      )
 
       # redirect_to root_path
     end

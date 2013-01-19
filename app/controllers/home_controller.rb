@@ -12,6 +12,8 @@ class HomeController < ApplicationController
     end
     if session[:facebook]
       # client.authorization_code = params[:code]
+      fb_auth = FbGraph::Auth.new(fb_id, fb_secret)
+      client = fb_auth.client
       fb_access_token = client.access_token! :client_auth_body
 
       @graph = Koala::Facebook::API.new(fb_access_token)

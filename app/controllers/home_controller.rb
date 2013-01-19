@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     session[:facebook] = true 
     fb_auth = FbGraph::Auth.new(fb_id, fb_secret)
     client = fb_auth.client
-    client.redirect_uri = "http://dimarsec-dev.herokuapp.com/over_ons"
+    client.redirect_uri = "http://dimarsec-dev.herokuapp.com"
     redirect_to client.authorization_uri(:scope => [:email, :read_stream, :offline_access])
     # oauth = Koala::Facebook::OAuth.new(fb_id, fb_secret)
     # fb_access_token = oauth.parse_signed_request(params[:signed_request])["oauth_token"] 

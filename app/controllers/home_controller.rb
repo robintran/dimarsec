@@ -17,7 +17,7 @@ class HomeController < ApplicationController
       client.authorization_code = params[:code]
       fb_access_token = client.access_token! :client_auth_body
 
-      me = FbGraph::User.me(ACCESS_TOKEN)
+      me = FbGraph::User.me(fb_access_token)
       me.feed!(
         :message => 'Updating via FbGraph',
         :picture => 'https://graph.facebook.com/matake/picture',

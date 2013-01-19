@@ -2,42 +2,66 @@ class HomeController < ApplicationController
 
   def index
     if session[:request_token]
-      url = request.fullpath
-      oauth_verifier = url.split('oauth_verifier=')[1]
-      signing_consumer = OAuth::Consumer.new("4iUq2TNrl3scEYsYH800mw", "3y4rwvIxdi6K9x6wHh8MEo8jH2Sy0UEZlwLY9qJgk",{ :site=>"http://twitter.com" })
-      access_token = OAuth::RequestToken.new(signing_consumer, session[:request_token], session[:request_token_secret]). get_access_token(:oauth_verifier => oauth_verifier)
-      oauth_token = access_token.params[:oauth_token]
-      oauth_token_secret = access_token.params[:oauth_token_secret]
-      Twitter.configure do |config|
-        config.consumer_key = "4iUq2TNrl3scEYsYH800mw"
-        config.consumer_secret = "3y4rwvIxdi6K9x6wHh8MEo8jH2Sy0UEZlwLY9qJgk"
-        config.oauth_token = oauth_token
-        config.oauth_token_secret = oauth_token_secret
-      end
+      access_token = get_access_token(session[:request_token])
+      session[:access_token] = access_token
+      session[:request_token] = nil
 
-      client = Twitter::Client.new
-      now = DateTime.now
-      client.update(now)
+      post_to_twitter(session[:access_token])
+
+      # redirect_to root_path
     end
   end
 
-  def self.consumer
-    OAuth::Consumer.new("4iUq2TNrl3scEYsYH800mw", "3y4rwvIxdi6K9x6wHh8MEo8jH2Sy0UEZlwLY9qJgk",{ :site=>"http://twitter.com" })
-  end
-
   def post_twitter_action
-    @request_token = HomeController.consumer.get_request_token(:oauth_callback => "http://dimarsec-dev.herokuapp.com")
-    session[:request_token] = @request_token.token
-    session[:request_token_secret] = @request_token.secret
+    if session[:access_token]
+      post_to_twitter(session[:access_token])
 
-    puts "****************"
-    puts @request_token.authorize_url
-    puts "****************"
-
-    redirect_to @request_token.authorize_url
-
-    return
+      redirect_to root_path
+    else
+      @request_token = get_consumer.get_request_token(:oauth_callback => "http://smackaho.st:3000")
+      session[:request_token] = @request_token
+      redirect_to @request_token.authorize_url
+    end
   end
+
+  #*****************************************
+  # Begin supporting for post twitter action
+  def post_to_twitter(access_token)
+    twitter_config(session[:access_token])
+
+    client = Twitter::Client.new
+    now = DateTime.now
+    client.update(now)
+  end
+  def get_access_token(request_token)
+    url = request.fullpath
+    oauth_verifier = url.split('oauth_verifier=')[1]
+    signing_consumer = get_consumer
+    token = request_token.token
+    secret = request_token.secret
+    access_token = OAuth::RequestToken.new(signing_consumer, token, secret). get_access_token(:oauth_verifier => oauth_verifier)
+  end
+  def twitter_config(access_token)
+    oauth_token = access_token.params[:oauth_token]
+    oauth_token_secret = access_token.params[:oauth_token_secret]
+    Twitter.configure do |config|
+      config.consumer_key = app_key
+      config.consumer_secret = app_secret
+      config.oauth_token = oauth_token
+      config.oauth_token_secret = oauth_token_secret
+    end
+  end
+  def get_consumer
+    return OAuth::Consumer.new(app_key, app_secret,{ :site=>"http://twitter.com" })
+  end
+  def app_key
+    return "4iUq2TNrl3scEYsYH800mw"
+  end
+  def app_secret
+    return "3y4rwvIxdi6K9x6wHh8MEo8jH2Sy0UEZlwLY9qJgk"
+  end
+  # End supporting for post switter action
+  #*****************************************
 
   def solliciteren_action   
     session[:false_answer] = "questions"

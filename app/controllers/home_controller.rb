@@ -18,7 +18,7 @@ class HomeController < ApplicationController
 
       redirect_to root_path
     else
-      @request_token = get_consumer.get_request_token(:oauth_callback => "http://smackaho.st:3000")
+      @request_token = get_consumer.get_request_token(:oauth_callback => "http://dimarsec-dev.herokuapp.com/")
       session[:request_token] = @request_token
       redirect_to @request_token.authorize_url
     end

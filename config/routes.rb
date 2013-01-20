@@ -1,5 +1,6 @@
 Dimarsec::Application.routes.draw do
 
+
   #page home index
   get "home/index"
 

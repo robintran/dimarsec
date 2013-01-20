@@ -7,55 +7,66 @@ class HomeController < ApplicationController
       session[:request_token] = nil
 
       post_to_twitter(session[:access_token])
-
-      # redirect_to root_path
     end
-    if session[:facebook]
-      # client.authorization_code = params[:code]
-      fb_auth = FbGraph::Auth.new(fb_id, fb_secret)
-      client = fb_auth.client
-      client.authorization_code = params[:code]
-      fb_access_token = client.access_token! :client_auth_body
 
-      me = FbGraph::User.me(fb_access_token)
-      me.feed!(
-        :message => 'Updating via FbGraph',
-        :picture => 'https://graph.facebook.com/matake/picture',
-        :link => 'https://github.com/nov/fb_graph',
-        :name => 'FbGraph',
-        :description => 'A Ruby wrapper for Facebook Graph API'
-      )
 
-      # redirect_to root_path
+
+
+
+
+
+
+    if session[:li_request_token]
+      client = LinkedIn::Client.new('4pau5xpp6ls2', '2PNyI4Q9vYBfsUOy')
+      pin = params[:oauth_verifier]
+      atoken, asecret = client.authorize_from_request(session[:li_request_token].token, session[:li_request_token].secret, pin)
+
+      puts "********************"
+      puts atoken
+      puts asecret
+      puts "********************"
+
+      client = LinkedIn::Client.new('4pau5xpp6ls2', '2PNyI4Q9vYBfsUOy')
+      client.authorize_from_access(atoken, asecret)
+      now = DateTime.now.to_s
+      client.add_share(:comment => now)
+    end
+
+
+
+
+
+    if params[:code]
+      oauth_client = OAuth2::Client.new('325004784270336', 'bab585883a309071118621a39bb302f9', {
+        :site => 'https://graph.facebook.com',
+        :token_url => '/oauth/access_token'
+      })
+      token = oauth_client.auth_code.get_token(params[:code], :redirect_uri => 'http://smackaho.st:3000/')
+      access_token = token.split('&expires=')[0]
+      access_token = "AAAEnlxK3fAABAJwvZCNTF0KNnZBIvTUDZC9UomgcthI8n2saZB2IbqNtZBwI5O99Yt0KYW2lHd1EMS0fH99LF3GKVoQWBC7J3kANvYTyX3wZDZD"
+      @graph = Koala::Facebook::API.new(access_token)
+      now = DateTime.now.to_s
+      @graph.put_connections("me", "feed", :message => now)
     end
   end
 
-  def post_facebook_action
-    session[:facebook] = true 
-    fb_auth = FbGraph::Auth.new(fb_id, fb_secret)
-    client = fb_auth.client
-    client.redirect_uri = "http://dimarsec-dev.herokuapp.com"
-    redirect_to client.authorization_uri(:scope => [:email, :read_stream, :offline_access])
-    # oauth = Koala::Facebook::OAuth.new(fb_id, fb_secret)
-    # fb_access_token = oauth.parse_signed_request(params[:signed_request])["oauth_token"] 
-    # @graph = Koala::Facebook::API.new(fb_access_token)
-    # now = DateTime.now
-    # @graph.put_connections("me", "feed", :message => now)
-
+  #post to linkedin
+  def post_linkedin_action
+    client = LinkedIn::Client.new('4pau5xpp6ls2', '2PNyI4Q9vYBfsUOy')
+    session[:li_request_token] = client.request_token(:oauth_callback => "http://smackaho.st:3000/")
+    redirect_to client.request_token.authorize_url
     # redirect_to root_path
+  end
+
+  # post to facebook
+  def post_facebook_action
+    oauth_client = OAuth2::Client.new('325004784270336', 'bab585883a309071118621a39bb302f9', {:authorize_url => 'https://www.facebook.com/dialog/oauth'})
+    redirect_to oauth_client.authorize_url({
+      :client_id => '325004784270336',
+      :redirect_uri => 'http://smackaho.st:3000/'
+    })
     
   end
-
-  #*****************************************
-  # Begin supporting for post twitter action
-  def fb_id
-    return "325004784270336"    
-  end
-  def fb_secret
-    return "fa4fe593d97335f2d0bc27e796761d79"
-  end
-  # End supporting for post switter action
-  #*****************************************
 
 
   # post to twitter

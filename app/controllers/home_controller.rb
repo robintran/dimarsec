@@ -9,33 +9,15 @@ class HomeController < ApplicationController
       post_to_twitter(session[:access_token])
     end
 
-
-
-
-
-
-
-
     if session[:li_request_token]
       client = LinkedIn::Client.new('4pau5xpp6ls2', '2PNyI4Q9vYBfsUOy')
       pin = params[:oauth_verifier]
       atoken, asecret = client.authorize_from_request(session[:li_request_token].token, session[:li_request_token].secret, pin)
-
-      puts "********************"
-      puts atoken
-      puts asecret
-      puts "********************"
-
-      client = LinkedIn::Client.new('4pau5xpp6ls2', '2PNyI4Q9vYBfsUOy')
       client.authorize_from_access(atoken, asecret)
       now = DateTime.now.to_s
       client.add_share(:comment => now)
     end
-
-
-
-
-
+    
     if params[:code]
       oauth_client = OAuth2::Client.new('325004784270336', 'bab585883a309071118621a39bb302f9', {
         :site => 'https://graph.facebook.com',
@@ -53,7 +35,7 @@ class HomeController < ApplicationController
   #post to linkedin
   def post_linkedin_action
     client = LinkedIn::Client.new('4pau5xpp6ls2', '2PNyI4Q9vYBfsUOy')
-    session[:li_request_token] = client.request_token(:oauth_callback => "http://smackaho.st:3000/")
+    session[:li_request_token] = client.request_token(:oauth_callback => "https://dimarsec-dev.herokuapp.com")
     redirect_to client.request_token.authorize_url
     # redirect_to root_path
   end
@@ -63,7 +45,7 @@ class HomeController < ApplicationController
     oauth_client = OAuth2::Client.new('325004784270336', 'bab585883a309071118621a39bb302f9', {:authorize_url => 'https://www.facebook.com/dialog/oauth'})
     redirect_to oauth_client.authorize_url({
       :client_id => '325004784270336',
-      :redirect_uri => 'http://smackaho.st:3000/'
+      :redirect_uri => 'https://dimarsec-dev.herokuapp.com'
     })
     
   end
@@ -76,7 +58,7 @@ class HomeController < ApplicationController
 
       redirect_to root_path
     else
-      @request_token = get_consumer.get_request_token(:oauth_callback => "http://smackaho.st:3000/")
+      @request_token = get_consumer.get_request_token(:oauth_callback => "https://dimarsec-dev.herokuapp.com")
       session[:request_token] = @request_token
       redirect_to @request_token.authorize_url
     end

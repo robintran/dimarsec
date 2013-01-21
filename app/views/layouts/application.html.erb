@@ -9,6 +9,17 @@
 	<meta http-equiv="keywords" content="" />
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=325004784270336";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <div class="wraper-full clearfix">
     <div id="header" class="clearfix">
         <div class="logo"><a href="#" title="Dimarsec">Dimarsec</a></div>
@@ -47,10 +58,16 @@
           </div>
           <div class="col2">
               <h3>Volg ons</h3>
-              <div class="ct-body social">
-                <%= link_to("Facebook", post_facebook_action_path) %>
-                <%= link_to("Twitter", post_twitter_action_path, :class => "tw") %>
-                <%= link_to("Linked In", post_linkedin_action_path, :class => "li") %>   
+              <div class="ct-body social">                
+                <fb:share-button type="button_count">
+                </fb:share-button>
+
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="duytran_it" data-count="none">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                </script>  
+
+                <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                <script type="IN/Share"></script>
                         
               </div>
           </div>

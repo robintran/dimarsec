@@ -21,25 +21,13 @@ gem 'jquery-rails'
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'debugger'
 end
 
 group :production do
 	gem 'pg'	
 end
 
-# gem 'linkedin'
-gem 'twitter'
-# gem 'omniauth'
-gem 'oauth'
-# gem 'rest-client'
-gem 'json'
-gem 'sinatra'
-gem 'oauth2'
-gem 'koala'
-gem 'linkedin'
-# gem 'omniauth-facebook'
-# gem 'fb_graph'
-# gem 'oauth'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

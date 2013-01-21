@@ -125,9 +125,9 @@ h6 {font-size: 11px;}
 		.contact-row .col1 p strong {float:left; width:96px; text-align:right}
 		.contact-row .col1 p span {float:left; overflow:hidden; padding-left:11px;}
 	.contact-row .col2 {width:345px; float:left; padding:0 19px; border-right:#e5e6e6 1px solid; border-left:#e5e6e6 1px solid; min-height:205px; padding-bottom:10px;}
-		.contact-row .col2 .social a {background:url(social.png) top left no-repeat; float:left; width:102px; height:101px; text-indent:-9999px;}
+		/*.contact-row .col2 .social a {background:url(social.png) top left no-repeat; float:left; width:102px; height:101px; text-indent:-9999px;}
 			.contact-row .col2 .social a.tw {background-position:-119px 0; margin:0 18px;}
-			.contact-row .col2 .social a.li {background-position:top right}
+			.contact-row .col2 .social a.li {background-position:top right}*/
 	.contact-row .col3 {width:330px; float:left; padding-left:19px;}
 		#form-newsletter {}
 			#form-newsletter input[type="text"],#form-newsletter input[type="email"] { margin-bottom:10px; width:286px; font-style:italic;}

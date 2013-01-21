@@ -1,0 +1,14 @@
+.fb_iframe_widget {
+position: relative;
+width: 46px;
+height: 21px;
+}
+
+.twitter-share-button{
+position: absolute;
+margin-left: 20px
+}
+.IN-widget{
+position: absolute;
+margin-left: 80px
+}

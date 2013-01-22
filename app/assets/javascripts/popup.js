@@ -16,10 +16,4 @@ $(document).ready(function () {
     $(".alert-form").fadeOut();
     return false;
   });
-
-  $(window).resize(function() {
-     if (!$('#zoomContainer01').is(':hidden')){
-       $('#zoomContainer01').css({width:$(document).width(), height:$(document).height()}).show();
-     };
-  });
 });

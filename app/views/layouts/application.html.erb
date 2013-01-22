@@ -19,6 +19,8 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<div id="zoomContainer01"></div>
+<div class="clearfix"></div>
 <div class="wraper-full clearfix">
     <div id="header" class="clearfix">
         <div class="logo"><a href="#" title="Dimarsec">Dimarsec</a></div>
@@ -70,8 +72,8 @@
           </div>
           <div class="col3">
               <h3>Blijf op de hoogte</h3>
-              <div class="ct-body newsletter">
-                  <form action="<%=  send_subscribe_email_action_path %>" method="post" id="form-newsletter" onsubmit="return confirm('U bent succesvol aangemeld voor de nieuwsbrief!')">
+              <div class="ct-body newsletter">                  
+                  <form action="<%=  send_subscribe_email_action_path %>" method="post" id="form-newsletter">
                       <%= email_field_tag("email", "Voer email adres in")%>
                       <input type="submit" class="org-btn" value="Inschrijven voor nieuwsbrief" />
                   </form> 
@@ -88,5 +90,16 @@
       </div>
     </div><!-- #footer -->
 </div>
+<% if flash[:sending_email] == 'successful' %>
+  <%= render :partial => "shared/sending_email_alert" %>
+  <script>
+    $(function(){
+      $(".alert-form").css("left",($(document).width()/2)-200);
+      $(".alert-form").css("top", 120);
+      $(".alert-form").fadeIn();
+      $('#zoomContainer01').css({width:$(document).width(), height:$(document).height()}).show();        
+    });
+  </script>
+<% end %>
 </body>
 </html>

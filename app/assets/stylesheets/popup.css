@@ -1,0 +1,17 @@
+#zoomContainer01{width:100%;  background:#000; opacity:0.5; position:absolute; left:0; top:0;   z-index:998}
+#zoom{z-index:999; }
+
+.lightBox{ background:#ffffff; float:left; margin:0 auto; padding:20px 20px 20px 20px; width:356px; /*border:10px solid #9a9a9a;*/ position:absolute; left: 600px; z-index:1000; display:none; text-align:center; height:auto; border:1px solid #e7e7e7;}
+.lightBox p{
+  margin:0px 0px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:25px;
+  font-weight:normal;
+  font-style:italic;
+  color:#000;
+  text-align:center;
+}
+.lightBox img{
+  margin:18px 0px;
+  padding:0px 0px;
+}

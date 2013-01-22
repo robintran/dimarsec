@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def index
+
   end
 
   def upload_cv_action
@@ -52,9 +53,12 @@ class HomeController < ApplicationController
   	redirect_to klant_worden_path
   end
 
-  def send_subscribe_email_action
-    UserMailer.notice(params[:email]).deliver 
-    redirect_to root_path
+  def send_subscribe_email_action    
+    # session[:sending_email] = "U bent succesvol aangemeld voor de nieuwsbrief!"
+    if UserMailer.notice(params[:email]).deliver
+      flash[:sending_email] = 'successful'
+    end    
+    redirect_to root_path 
   end
   
 end

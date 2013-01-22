@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def notice(from)
     @from = from
-    mail to: 'info@dimarsec.com', subject: "New Newsletter Adding"
+    mail to: 'duytran_it@yahoo.com.vn', subject: "New Newsletter Adding"
   end
 
   def signup_confirmation(answer1_question1,
@@ -44,6 +44,6 @@ class UserMailer < ActionMailer::Base
     @answer5_question11 = answer5_question11
 
     
-    mail to: 'info@dimarsec.com', subject: "Security Survey"
+    mail to: 'duytran_it@yahoo.com.vn', subject: "Security Survey"
   end
 end

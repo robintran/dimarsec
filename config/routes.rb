@@ -19,6 +19,9 @@ Dimarsec::Application.routes.draw do
   #send subscribe email
   match "/send_subscribe_email_action" => "home#send_subscribe_email_action"
 
+  #upload cv
+  match "/upload_cv_action" => "home#upload_cv_action"
+
   #post entry on facebook / twitter / linked in
   get "home/post_facebook_action"
   match "post_facebook_action" => "home#post_facebook_action"

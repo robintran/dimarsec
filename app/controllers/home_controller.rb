@@ -3,6 +3,10 @@ class HomeController < ApplicationController
   def index
   end
 
+  def upload_cv_action
+    redirect_to root_path
+  end
+
   def solliciteren_action   
     session[:false_answer] = "questions"
     if request.post?
@@ -49,7 +53,7 @@ class HomeController < ApplicationController
   end
 
   def send_subscribe_email_action
-    UserMailer.notice(params[:email]).deliver
+    UserMailer.notice(params[:email]).deliver 
     redirect_to root_path
   end
   

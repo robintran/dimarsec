@@ -71,9 +71,9 @@
           <div class="col3">
               <h3>Blijf op de hoogte</h3>
               <div class="ct-body newsletter">
-                  <form action="<%=  send_subscribe_email_action_path %>" method="post" id="form-newsletter">
+                  <form action="<%=  send_subscribe_email_action_path %>" method="post" id="form-newsletter" onsubmit="return confirm('U bent succesvol aangemeld voor de nieuwsbrief!')">
                       <%= email_field_tag("email", "Voer email adres in")%>
-                      <input type="submit" class="org-btn" value="Inschrijven voor nieuwsbrief"  />
+                      <input type="submit" class="org-btn" value="Inschrijven voor nieuwsbrief" />
                   </form> 
               </div>
           </div>

@@ -9,9 +9,9 @@
                 </div>
             </div>
             <% if session[:false_answer].to_i > 3 %>
-                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn" onclick="return false">Knop: ga door naar het sollicitatieformulier</a>
+                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn" onclick="return false">Ga door naar het sollicitatieformulier</a>
             <% else %>
-                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn">Knop: ga door naar het sollicitatieformulier</a>
+                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn">Ga door naar het sollicitatieformulier</a>
             <% end %>         
         </div>
         <div class="span4">
@@ -24,9 +24,9 @@
                 </div>
             </div>
             <% if session[:false_answer].to_i > 5 %>
-                <a href="<%= solliciteren_action_path %>" class="org-btn" onclick="return false">Knop: doe de test opnieuw</a>
+                <a href="<%= solliciteren_action_path %>" class="org-btn" onclick="return false">Doe de test opnieuw</a>
             <% else %>
-                <a href="<%= solliciteren_action_path %>" class="org-btn">Knop: doe de test opnieuw</a>
+                <a href="<%= solliciteren_action_path %>" class="org-btn">Doe de test opnieuw</a>
             <% end %>
             
         </div>
@@ -38,7 +38,7 @@
                 	Blijf doen wat u doet en zie af van een carrière bij Dimarsec.
                 </div>
             </div>
-            <a href="<%= root_path %>" class="org-btn">Knop: Escape and exit</a>
+            <a href="<%= root_path %>" class="org-btn">Escape and exit</a>
         </div>
     </div>
 </div>   

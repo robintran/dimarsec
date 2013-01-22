@@ -8,7 +8,12 @@
    	</div>
     <div class="form-box">
     	<h3 class="head-title-page">Contactgegevens</h3>
-        <form class="form-horizontal large-form" action="" method="post">
+        <form class="form-horizontal large-form" action='https://crm.zoho.com/crm/WebToLeadForm' method="post" onSubmit='javascript:document.charset="UTF-8"; return checkMandatery()' accept-charset='UTF-8'>
+            <input type='text' style='display:none;' name='xnQsjsdp' value='EGQt6LMQk01thYo*kRl79w$$'/>  
+            <input type='text' style='display:none;' name='xmIwtLD' value='dIJ7L557X5OsId7CASFW0WL8wauvoztB'/>  
+            <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='/> 
+            <input type='text' style='display:none;' name='returnURL' value='http://smackaho.st:3000/' /> <br>
+
             <div class="control-group">
                 <label class="control-label" for="in-name">Bedrijfsnaam:</label>
                 <div class="controls">
@@ -52,7 +57,7 @@
                 </div>
             </div>
             <div class="form-actions">
-                <input type="submit" value="Verzend" class="org-btn fright" />
+                <input type="submit" value="Verzend" id="klant_worden_submit"/>
             </div>
         </form>
     </div>   

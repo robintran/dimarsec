@@ -2,6 +2,10 @@ Dimarsec::Application.routes.draw do
   #page home index
   get "home/index"
 
+  #page webformulier
+  get "home/webformulier"
+  match "webformulier" => "home#webformulier"
+
   #page klant_worden
   get "home/klant_worden"
   post "home/klant_worden"

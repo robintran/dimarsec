@@ -90,7 +90,7 @@
       </div>
     </div><!-- #footer -->
 </div>
-<% if flash[:sending_email] == 'successful' %>
+<% if flash[:alert] != nil %>
   <%= render :partial => "shared/sending_email_alert" %>
   <script>
     $(function(){

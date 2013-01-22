@@ -58,5 +58,6 @@ module Dimarsec
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.assets.precompile += ['le.css', 'popup.css', 'reset.css', 'social.css', 'style.css']
   end
 end

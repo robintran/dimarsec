@@ -4,10 +4,6 @@ class HomeController < ApplicationController
 
   end
 
-  def upload_cv_action
-    redirect_to root_path
-  end
-
   def solliciteren_action   
     session[:false_answer] = "questions"
     if request.post?
@@ -38,16 +34,13 @@ class HomeController < ApplicationController
     redirect_to solliciteren_path
   end
 
-  def klant_worden_action
-    redirect_to webformulier_path
-  end
-
   def send_subscribe_email_action    
-    # session[:sending_email] = "U bent succesvol aangemeld voor de nieuwsbrief!"
+    session[:sending_email] = "U bent succesvol aangemeld voor de nieuwsbrief!"
     if UserMailer.notice(params[:email]).deliver
       flash[:sending_email] = 'successful'
     end    
     redirect_to root_path 
+    redirect_to root_path
   end
   
 end

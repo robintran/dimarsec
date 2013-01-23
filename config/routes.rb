@@ -10,7 +10,6 @@ Dimarsec::Application.routes.draw do
   get "home/klant_worden"
   post "home/klant_worden"
   match "/klant_worden" => "home#klant_worden"
-  match "/klant_worden_action" => "home#klant_worden_action"
 
   #page over_ons
   get "home/over_ons"

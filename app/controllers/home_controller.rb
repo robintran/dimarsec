@@ -33,14 +33,5 @@ class HomeController < ApplicationController
     session[:false_answer] = "formulier"
     redirect_to solliciteren_path
   end
-
-  def send_subscribe_email_action    
-    session[:sending_email] = "U bent succesvol aangemeld voor de nieuwsbrief!"
-    if UserMailer.notice(params[:email]).deliver
-      flash[:sending_email] = 'successful'
-    end    
-    redirect_to root_path 
-    redirect_to root_path
-  end
   
 end

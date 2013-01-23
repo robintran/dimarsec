@@ -19,20 +19,6 @@ Dimarsec::Application.routes.draw do
   get "home/werkwijze"
   match "/werkwijze" => "home#werkwijze"
 
-  #send subscribe email
-  match "/send_subscribe_email_action" => "home#send_subscribe_email_action"
-
-  #upload cv
-  match "/upload_cv_action" => "home#upload_cv_action"
-
-  #post entry on facebook / twitter / linked in
-  get "home/post_facebook_action"
-  match "post_facebook_action" => "home#post_facebook_action"
-  get "home/post_twitter_action"
-  match "post_twitter_action" => "home#post_twitter_action"
-  get "home/post_linkedin_action"
-  match "post_linkedin_action" => "home#post_linkedin_action"
-
   #page solliciteren
   get "home/solliciteren"
   post "home/solliciteren"

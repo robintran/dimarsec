@@ -71,10 +71,19 @@
           <div class="col3">
               <h3>Blijf op de hoogte</h3>
               <div class="ct-body newsletter">                  
-                  <form action="http://zc1.maillist-manage.com/ua/Optin?od=11287eca3c7df7&opDgs=7200cd3a4fff9f7aaab4b086df04ef341185630859ca1fd0&lD=140c0734fad5ea5&n=11699f7519af83e" method="post" id="form-newsletter">
-                      <%= email_field_tag("email", "Voer email adres in")%>
-                      <input type="submit" id="newsletter_submit" class="org-btn" value="Inschrijven voor nieuwsbrief" />
-                  </form> 
+                  
+                <div id="zc_embed_signup">
+                  <form method ='POST' target='_blank' style='width:200px' id="zcampaignminiform" action="http://zc1.maillist-manage.com/ua/Optin?od=11287eca3c7df7&opDgs=7200cd3a4fff9f7aaab4b086df04ef341185630859ca1fd0&lD=140c0734fad5ea5&n=11699f7519af83e">
+                  <div>
+                    <div style="margin-top:3px;">
+                      <input type="text" id="zcemail" name='optinEmail' value="Voer email adres in">
+                    </div>
+                    <div> 
+                      <input type="submit" class="org-btn" id="zcembedminiform" style="border-radius:5px;color:#fff;font-size:12px;border-style:solid;background-color:#555;border-color:#555;font-family:Arial;border-width:1px;;text-decoration:none; border-radius:3px;padding:5px 15px;" value="Inschrijven voor nieuwsbrief">
+                    </div>
+                  </div>
+                </form>
+              </div>
               </div>
           </div>
       </div>

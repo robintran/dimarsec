@@ -8,10 +8,10 @@
                     Proficiat, u heeft de vragen goed genoeg beantwoord en wordt nu doorgeschakeld naar onze contactpagina zodat u uw gegevens kunt achterlaten. Wij nemen dan snel contact met u op.   
                 </div>
             </div>
-            <% if session[:false_answer].to_i > 3 %>
-                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn" onclick="return false">Ga door naar het sollicitatieformulier</a>
+            <% if session[:false_answer].to_i < 4 %>
+                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn">Ga door naar het sollicitatieformulier</a>                
             <% else %>
-                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn">Ga door naar het sollicitatieformulier</a>
+                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn" onclick="return false">Ga door naar het sollicitatieformulier</a>
             <% end %>         
         </div>
         <div class="span4">
@@ -23,10 +23,10 @@
                     Probeer de test opnieuw.
                 </div>
             </div>
-            <% if session[:false_answer].to_i > 5 %>
-                <a href="<%= solliciteren_action_path %>" class="org-btn" onclick="return false">Doe de test opnieuw</a>
+            <% if (session[:false_answer].to_i >= 4)&&(session[:false_answer].to_i < 6)  %>
+                <a href="<%= solliciteren_action_path %>" class="org-btn">Doe de test opnieuw</a>                
             <% else %>
-                <a href="<%= solliciteren_action_path %>" class="org-btn">Doe de test opnieuw</a>
+                <a href="<%= solliciteren_action_path %>" class="org-btn" onclick="return false">Doe de test opnieuw</a>
             <% end %>
             
         </div>
@@ -38,7 +38,11 @@
                 	Blijf doen wat u doet en zie af van een carrière bij Dimarsec.
                 </div>
             </div>
-            <a href="<%= root_path %>" class="org-btn">Escape and exit</a>
+            <% if session[:false_answer].to_i >= 6  %>
+                <a href="<%= root_path %>" class="org-btn">Escape and exit</a>                
+            <% else %>
+                <a href="<%= root_path %>" class="org-btn" onclick="return false">Escape and exit</a>
+            <% end %>
         </div>
     </div>
 </div>   

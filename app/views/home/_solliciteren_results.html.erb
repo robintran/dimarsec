@@ -9,9 +9,9 @@
                 </div>
             </div>
             <% if session[:false_answer].to_i < 4 %>
-                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn">Ga door naar het sollicitatieformulier</a>                
+                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn">Naar sollicitatieformulier</a>                
             <% else %>
-                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn" onclick="return false">Ga door naar het sollicitatieformulier</a>
+                <a href="<%= sollicitatie_formulier_action_path %>" class="org-btn" onclick="return false">Naar sollicitatieformulier</a>
             <% end %>         
         </div>
         <div class="span4">
